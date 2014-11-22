@@ -1,23 +1,19 @@
 Getting-and-Cleaning-Data-Course-Project
 ========================================
-
 Getting and Cleaning Data Course 
-
 
 ### Script 
 
-Step 1:   setwd("UCI HAR Dataset")
+# Step 1:  
+    setwd("UCI HAR Dataset")-- Setting the Current working directory to Data Folder.
+# Step 2:  
+    Reading Descriptive Variable names from features.txt and Activity Names from activity_labels
+            columns <- read.table("./features.txt")
+             x_col<-columns[,2]
+            activity <- read.table("./activity_labels.txt")
     
-    #########################################################################################
-    # 1. Merges the training and the test sets to create one data set.       ###
-    # 4. Appropriately labels the data set with descriptive variable names   ###
-    
-    # Reading Columns Data 
-    columns <- read.table("./features.txt")
-    x_col<-columns[,2]
-    activity <- read.table("./activity_labels.txt")
-    
-    
+* Step 2:  Merges the training and the test sets to create one data set and Appropriately labels the data set with                      descriptive variable names   
+
     # Merging Subject Data
     train_subject <- read.table("./train/subject_train.txt",col.names = c("subject"))
     test_subject <- read.table("./test/subject_test.txt",col.names = c("subject"))
@@ -36,7 +32,7 @@ Step 1:   setwd("UCI HAR Dataset")
     train_activity <- read.table("./train/y_train.txt",col.names = c("Activity"))
     test_activity <- read.table("./test/y_test.txt",col.names = c("Activity"))
     all_data_activity <- data.frame(rbind(train_activity,test_activity))
-    #write.table(all_data_activity,file="alldata_activity.csv")
+    write.table(all_data_activity,file="alldata_activity.csv")
     
     
     #combining Activiy and X Data and Subject Data
