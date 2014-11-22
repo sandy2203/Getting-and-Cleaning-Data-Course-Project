@@ -66,7 +66,7 @@ run_analysis <- function()
     finaltidyset<- ddply(alldatamelt,.(subject,Activity,variable),summarise,mean=mean(value))
     
     # Writing Tidy data set to a file
-    write.table (finaltidyset, file="FinalTidySet.csv", row.name=FALSE)
+    write.table (finaltidyset, file="FinalTidySet.txt", row.name=FALSE)
 
     
     setwd(cwd)
