@@ -4,10 +4,9 @@ Getting and Cleaning Data Course
 
 ### Script 
 
-# Step 1:  
-    setwd("UCI HAR Dataset")-- Setting the Current working directory to Data Folder.
-# Step 2:  
-    Reading Descriptive Variable names from features.txt and Activity Names from activity_labels
+# Step 1: Setting the Current working directory to Data Folder.
+    setwd("UCI HAR Dataset")-- 
+# Step 2: Reading Descriptive Variable names from features.txt and Activity Names from activity_labels
             columns <- read.table("./features.txt")
              x_col<-columns[,2]
             activity <- read.table("./activity_labels.txt")
