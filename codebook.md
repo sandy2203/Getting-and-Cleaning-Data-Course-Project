@@ -14,7 +14,8 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 
 ### Code Book
-I have  created a Narrow Tidy data Set, Where Each row represent a value for a variable
+I have  created a Narrow Tidy data Set, Where Each row represent a value for a variable.
+
 My Tidy Data set had 4 Columns
 1. Subject - Represent the subject/person under test, Value ranging for 1-30
 2. Activity - Represent the activity performed by the Subject,Value are from one of the valid activity 
