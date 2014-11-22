@@ -17,14 +17,15 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 I have  created a Narrow Tidy data Set, Where Each row represent a value for a variable.
 
 My Tidy Data set had 4 Columns
-1. Subject - Represent the subject/person under test, Value ranging for 1-30
-2. Activity - Represent the activity performed by the Subject,Value are from one of the valid activity 
-		1 WALKING
-		2 WALKING_UPSTAIRS
-		3 WALKING_DOWNSTAIRS
-		4 SITTING
-		5 STANDING
-		6 LAYING
+1. Subject - Represent the subject/person under test, Value ranging for 1-30.
+2. Activity - Represent the activity performed by the Subject,Value are from one of the valid activity. 
+		1 WALKING.
+		2 WALKING_UPSTAIRS.
+		3 WALKING_DOWNSTAIRS.
+		4 SITTING.
+		5 STANDING.
+		6 LAYING.
 
 3. Variable - Represent the Descriptive description of type of Measurement, It contains only measurement having Mean or Standard Deviation for a activity.
+
 4. Mean - Represent mean/ average value of measurements. 
