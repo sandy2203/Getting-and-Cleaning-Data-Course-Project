@@ -11,33 +11,25 @@ Getting and Cleaning Data Course
              x_col<-columns[,2]
             activity <- read.table("./activity_labels.txt")
     
-* Step 2:  Merges the training and the test sets to create one data set and Appropriately labels the data set with                      descriptive variable names   
-
+## Step 3:  Merges the training and the test sets to create one data set and Appropriately labels the data set with                      descriptive variable names   
     # Merging Subject Data
     train_subject <- read.table("./train/subject_train.txt",col.names = c("subject"))
     test_subject <- read.table("./test/subject_test.txt",col.names = c("subject"))
     all_data_subject <- data.frame(rbind(train_subject,test_subject))
-    #write.table(all_data_subject,file="alldata_subject.csv")
-    
     
     # Merging mesearument Data
     train_X <- read.table("./train/X_train.txt",col.names = x_col)
     test_X <- read.table("./test/X_test.txt",col.names = x_col)
     all_data_X <- data.frame(rbind(train_X,test_X))
-    #write.table(all_data_X,file="alldata_X.csv")
-    
     
     # Merging Activity Y data
     train_activity <- read.table("./train/y_train.txt",col.names = c("Activity"))
     test_activity <- read.table("./test/y_test.txt",col.names = c("Activity"))
     all_data_activity <- data.frame(rbind(train_activity,test_activity))
-    write.table(all_data_activity,file="alldata_activity.csv")
-    
-    
+
     #combining Activiy and X Data and Subject Data
     all_data_X_activity <- data.frame(cbind(all_data_subject,all_data_activity,all_data_X)) 
-    #write.table(all_data_X_activity,file="all_data_X_activity.csv")
-    
+
     #########################################################################################
     # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
     
