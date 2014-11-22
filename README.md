@@ -43,15 +43,12 @@ Getting and Cleaning Data Course
 ## Step 5: Using descriptive activity names to name the activities in the data set
     all_data_X_activity$Activity <- factor(all_data_X_activity$Activity, labels = activity[,2])
    
-## Step 6: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for               each activity and each subject.
-*Created a Melted Data Set using Subject and Activity as Id variable and Converting all the 561 measurement variables         into narrow tidy Data set. 
+
+## Step 6: Created a Melted Data Set using Subject and Activity as Id variable and Converting all the 561 measurement variables into narrow tidy Data set. 
     alldatamelt <- melt(all_data_X_activity,id=c("subject","Activity"),measure.vars= names(train_X))
-*Using Meted Data Set created above, I applied ddply() funciton of R and calculated mean for all the variables for all        the activity for every subject. 
+## Step 7: Using Meted Data Set created above, I applied ddply() funciton of R and calculated mean for all the variables for all the activity for every subject. 
     finaltidyset <- ddply(alldatamelt,.(subject,Activity,variable),summarise,mean=mean(value))
-*Write back the Tidy set to file
+## Step 8: Write back the Tidy set to file
     write.table (finaltidyset, file="FinalTidySet.csv", row.name=FALSE)
 
-    
-    setwd(cwd)
-    
 }  
