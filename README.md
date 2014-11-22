@@ -35,7 +35,7 @@ Getting and Cleaning Data Course
     all_data_X_activity <- data.frame(cbind(all_data_subject,all_data_activity,all_data_X)) 
 
     
-## Step 4: Extracts only the measurements on the mean and standard deviation for each measurement.
+## Step 4: Extracts only the measurements on the mean and standard deviation for each measurement. using grepl function to get the varibale name which contain either mean or std in their name
     
     alldata_mean_std <- all_data_X_activity[, grepl("mean|std", names(all_data_X_activity))]
    
@@ -44,11 +44,11 @@ Getting and Cleaning Data Course
     all_data_X_activity$Activity <- factor(all_data_X_activity$Activity, labels = activity[,2])
    
 ## Step 6: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for               each activity and each subject.
-    ##  Created a Melted Data Set using Subject and Activity as Id variable and Converting all the 561 measurement variables         into narrow tidy Data set. 
+*Created a Melted Data Set using Subject and Activity as Id variable and Converting all the 561 measurement variables         into narrow tidy Data set. 
     alldatamelt <- melt(all_data_X_activity,id=c("subject","Activity"),measure.vars= names(train_X))
-    ##  Using Meted Data Set created above, I applied ddply() funciton of R and calculated mean for all the variables for all        the activity for every subject. 
+*Using Meted Data Set created above, I applied ddply() funciton of R and calculated mean for all the variables for all        the activity for every subject. 
     finaltidyset <- ddply(alldatamelt,.(subject,Activity,variable),summarise,mean=mean(value))
-    ##  Write back the Tidy set to file
+*Write back the Tidy set to file
     write.table (finaltidyset, file="FinalTidySet.csv", row.name=FALSE)
 
     
