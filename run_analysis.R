@@ -57,8 +57,15 @@ run_analysis <- function()
     #########################################################################################
     # 5. From the data set in step 4, creates a second, independent tidy data set with the 
     #    average of each variable for each activity and each subject.
+    
+    # Created Narrow Tidy Melt data set for Subject and Activity with Melt functions which converts all the row variables 
+    # in to column data set with variable = row-header and value per varible
     alldatamelt <- melt(all_data_X_activity,id=c("subject","Activity"),measure.vars= names(train_X))
-    finaltidyset <- ddply(alldatamelt,.(subject,Activity,variable),summarise,mean=mean(value))
+    
+    # Created final tidy data set by calculating mean for variable for every activity for each subject
+    finaltidyset<- ddply(alldatamelt,.(subject,Activity,variable),summarise,mean=mean(value))
+    
+    # Writing Tidy data set to a file
     write.table (finaltidyset, file="FinalTidySet.csv", row.name=FALSE)
 
     
