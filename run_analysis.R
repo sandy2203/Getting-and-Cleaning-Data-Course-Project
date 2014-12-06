@@ -4,7 +4,7 @@ run_analysis <- function()
     cwd <- getwd()
     setwd("UCI HAR Dataset")
     
-    #########################################################################################
+    #######################################################################################
     # 1. Merges the training and the test sets to create one data set.       ###
     # 4. Appropriately labels the data set with descriptive variable names   ###
     
