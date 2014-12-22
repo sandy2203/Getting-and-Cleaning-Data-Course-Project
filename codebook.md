@@ -11,8 +11,6 @@ Using its embedded accelerometer and gyroscope, we captured 3-axial linear accel
 The experiments have been video-recorded to label the data manually. 
 The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-
-
 ### Code Book
 I have  created a Narrow Tidy data Set, Where Each row represent a value for a variable.
 
