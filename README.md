@@ -43,7 +43,6 @@ Getting and Cleaning Data Course
 ## Step 5: Using descriptive activity names to name the activities in the data set
     all_data_X_activity$Activity <- factor(all_data_X_activity$Activity, labels = activity[,2])
    
-
 ## Step 6: Created a Melted Data Set using Subject and Activity as Id variable and Converting all the 561 measurement variables into narrow tidy Data set. 
     alldatamelt <- melt(all_data_X_activity,id=c("subject","Activity"),measure.vars= names(train_X))
 ## Step 7: Using Melted Data Set created above, I applied ddply() funciton of R and calculated mean for all the variables for            all the activity for every subject. 
